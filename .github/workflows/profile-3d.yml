@@ -1,0 +1,32 @@
+name: Generate 3D GitHub activity
+
+on:
+  push:
+    paths:
+      - .github/workflows/profile-3d.yml
+  schedule:
+    - cron: '17 19 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    if: github.repository == 'Gindama713/Gindama713'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - uses: yoshi389111/github-profile-3d-contrib@7d95e7d4cdc028dd1e1cbd957d65f35efb12ae39
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          USERNAME: ${{ github.repository_owner }}
+      - name: Save activity image
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add profile-3d-contrib/profile-night-green.svg
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Update 3D contribution graph"
+          git push
+
