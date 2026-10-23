@@ -5,7 +5,7 @@ on:
     paths:
       - .github/workflows/profile-3d.yml
   schedule:
-    - cron: '17 19 * * *'
+    - cron: '17 */4 * * *'
   workflow_dispatch:
 
 permissions:
