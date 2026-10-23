@@ -7,6 +7,6 @@
 </p>
 
 <p align="center">
-  <img src="./assets/gindama-toolkit.svg" alt="技术栈：Python、Docker、Vue、Flask、SQLite、Spring Boot、Git、Codex、DeepSeek" width="100%" />
+  <img src="./assets/gindama-toolkit.svg" alt="技术栈：Python、Go、Java、Vue、Spring Boot、Flask、Docker、SQLite、Godot、Git、Codex、DeepSeek" width="100%" />
 </p>
 
